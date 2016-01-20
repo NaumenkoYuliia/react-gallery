@@ -5,6 +5,10 @@
   "main": "./lib/Gallery.js",
   "author": "Fernando Marcheselli <fmarcheselli@gmail.com>",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ferndopolis/react-gallery.git"
+  },
   "scripts": {
     "test": "jest",
     "start": "scripts/dev-examples",
