@@ -2,7 +2,7 @@ require("./app.less")
 
 import React, {Component} from 'react'
 import ReactDOM from 'react-dom'
-import Gallery from './Gallery'
+import Gallery from '../lib/Gallery'
 
 class App extends Component {
     constructor () {

@@ -1,10 +1,10 @@
-jest.dontMock('../Gallery');
+jest.dontMock('../lib/Gallery');
 
 import React from 'react';
 import ReactDOM from 'react-dom';
 import TestUtils from 'react-addons-test-utils';
 
-const Gallery = require('../Gallery');
+const Gallery = require('../lib/Gallery');
 
 describe("Gallery", () => {
     var gallery, galleryWithLoop;
