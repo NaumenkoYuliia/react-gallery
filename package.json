@@ -1,0 +1,16 @@
+{
+  "name": "react-gallery",
+  "version": "0.0.1",
+  "description": "React gallery with swipe.",
+  "main": "./lib/index",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [
+    "react",
+    "react-gallery",
+    "gallery"
+  ],
+  "author": "Fernando Marcheselli <fmarcheselli@gmail.com>",
+  "license": "MIT"
+}
