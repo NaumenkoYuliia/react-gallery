@@ -9,6 +9,8 @@
     "type": "git",
     "url": "https://github.com/ferndopolis/react-gallery.git"
   },
+  "homepage": "https://github.com/ferndopolis/react-gallery",
+  "bugs": "https://github.com/ferndopolis/react-gallery/issues",
   "scripts": {
     "test": "jest",
     "start": "scripts/dev-examples",
@@ -16,7 +18,12 @@
   },
   "keywords": [
     "react",
+    "react-component",
     "react-gallery",
+    "gallery"
+  ],
+  "tags": [
+    "react",
     "gallery"
   ],
   "devDependencies": {
