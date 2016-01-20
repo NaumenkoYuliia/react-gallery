@@ -1,0 +1,8 @@
+#!/bin/sh
+mkdir -p dist
+NODE_ENV=production node_modules/.bin/browserify lib/Gallery.js \
+  -t [ babelify --presets [ es2015 react ] ] \
+  -s ReactGallery > dist/react-gallery.js
+node_modules/.bin/uglifyjs dist/react-gallery.js \
+  --compress warnings=false > dist/react-gallery.min.js
+
