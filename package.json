@@ -14,7 +14,8 @@
   "scripts": {
     "test": "jest",
     "start": "scripts/dev-examples",
-    "build": "scripts/build"
+    "build": "scripts/build",
+    "watch": "scripts/watch"
   },
   "keywords": [
     "react",

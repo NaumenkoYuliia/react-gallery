@@ -1,6 +1,8 @@
 # React Gallery
 
-Elegant gallery React Component with swipe.
+Elegant gallery with swipe.
+
+WORK IN PROGRESS many changes will be made to core function.
 
 Check it out
 [ferndopolis.github.io/react-gallery](http://ferndopolis.github.io/react-gallery/)
@@ -30,5 +32,6 @@ const images = [
 ` npm install `
 ` npm test `
 ` npm start `
+` npm watch `
 
 Point browser to [`localhost:8080`](http://localhost:8080)
