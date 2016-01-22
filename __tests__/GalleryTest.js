@@ -9,19 +9,23 @@ const Gallery = require('../lib/Gallery');
 describe("Gallery", () => {
     var gallery, galleryWithLoop;
 
-    var images = [
-        {src: "https://unsplash.it/800/600", title: 'Basil'},
-        {src: "https://unsplash.it/200/500", title: 'Cheese Sticks'},
-        {src: "https://unsplash.it/120/250", title: 'Burgers'}
+    var items = [
+        <div key='foo'>Foo</div>,
+        <div key='bar'>Bar</div>,
+        <div key='baz'>Baz</div>,
     ];
 
     beforeEach(() => {
         gallery = TestUtils.renderIntoDocument(
-            <Gallery images={ images }/>
+            <Gallery>
+              {items}
+            </Gallery>
         );
 
         galleryWithLoop = TestUtils.renderIntoDocument(
-            <Gallery loop={true} images={ images }/>
+            <Gallery loop={true}>
+              {items}
+            </Gallery>
         );
     });
 
@@ -68,7 +72,7 @@ describe("Gallery", () => {
     });
 
     describe("isNext()", () => {
-        it("should return true when image follows directly after currentImg", () => {
+        it("should return true when item follows directly after currentImg", () => {
             gallery.state.currentImg = 1
             expect(gallery.isNext(2)).toBe(true);
         });
@@ -81,15 +85,15 @@ describe("Gallery", () => {
             expect(gallery.isNext(1)).toBe(false);
         });
         describe("when loop is true", () => {
-            it("should return true only on first image when current image is last", () => {
+            it("should return true only on first item when current item is last", () => {
                 galleryWithLoop.state.currentImg = 2
                 expect(galleryWithLoop.isNext(0)).toBe(true);
             });
-            it("should return false on other images when current image is last", () => {
+            it("should return false on other item when current item is last", () => {
                 gallery.state.currentImg = 2
                 expect(gallery.isNext(1)).toBe(false);
             });
-            it("should return false on current image ", () => {
+            it("should return false on current item ", () => {
                 gallery.state.currentImg = 2
                 expect(gallery.isNext(2)).toBe(false);
             });
@@ -97,7 +101,7 @@ describe("Gallery", () => {
     });
 
     describe("isPrev()", () => {
-        it("should return true when image follows directly before currentImg", () => {
+        it("should return true when item follows directly before currentImg", () => {
             gallery.state.currentImg = 1
             expect(gallery.isPrev(0)).toBe(true);
         });
@@ -110,15 +114,15 @@ describe("Gallery", () => {
             expect(gallery.isPrev(1)).toBe(false);
         });
         describe("when loop is true", () => {
-            it("should return true only on last image when current image is first", () => {
+            it("should return true only on last item when current item is first", () => {
                 galleryWithLoop.state.currentImg = 0
                 expect(galleryWithLoop.isPrev(2)).toBe(true);
             });
-            it("should return false on other images when current image is first", () => {
+            it("should return false on other item when current item is first", () => {
                 gallery.state.currentImg = 0
                 expect(gallery.isPrev(1)).toBe(false);
             });
-            it("should return false on current image ", () => {
+            it("should return false on current item ", () => {
                 gallery.state.currentImg = 2
                 expect(gallery.isPrev(2)).toBe(false);
             });
@@ -144,7 +148,6 @@ describe("Gallery", () => {
 
         describe("when loop is true", () => {
             it("on last item should loop to first", () => {
-                var galleryWithLoop = TestUtils.renderIntoDocument(<Gallery loop={true} images={ images }/>);
                 galleryWithLoop.state.currentImg = 2
                 TestUtils.Simulate.click(
                     TestUtils.findRenderedDOMComponentWithClass(galleryWithLoop, 'right')
