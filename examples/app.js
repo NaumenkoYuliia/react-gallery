@@ -14,9 +14,14 @@ class App extends Component {
             { title: 'Corn', width: '1000', height: '1000'},
             { title: 'Cheese', width: '1250', height: '860'}
         ]
-        this.imagesSrc = images.map(( image ) => {
-            var src = "https://unsplash.it/" + image.width + "/" + image.height + "/?random";
-            return { title: image.title, src: src }
+        this.items = images.map(( item, i ) => {
+            var src = "https://unsplash.it/" + item.width + "/" + item.height + "/?random";
+            return (
+                <div key={i}>
+                    <h3 className="image-title">{item.title}</h3>
+                    <img className="centered" src={src} />
+                </div>
+            )
         })
 
     }
@@ -24,7 +29,9 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <Gallery loop={true} images={this.imagesSrc} />
+                <Gallery loop={true}>
+                   {this.items}
+                </Gallery>
             </div>
         )
     }
