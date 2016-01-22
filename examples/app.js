@@ -24,6 +24,14 @@ class App extends Component {
             )
         })
 
+        this.items.push(
+            <div key={'foo'}>
+                <div className="centered">
+                    <h1>Some Random Text</h1>
+                    <p>Sociis risus nisi lorem, sed! Et nunc diam odio nisi dolor porta et in, rhoncus amet, magnis scelerisque proin? Auctor lacus et et etiam proin turpis cum? Ac scelerisque quis ridiculus urna, placerat tristique augue aenean facilisis augue massa dignissim, lundium purus? Eu est, odio dignissim scelerisque urna scelerisque purus pulvinar est aliquam dictumst. Integer?</p>
+                </div>
+            </div>
+        )
     }
 
     render() {
