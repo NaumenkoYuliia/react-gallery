@@ -32,6 +32,14 @@ class App extends Component {
                 </div>
             </div>
         )
+
+        this.items.push(
+            <div key={'vimeo'} className={'vimeo-embed'}>
+                <div className="centered">
+                    <iframe src="//player.vimeo.com/video/148626927" width="640px" height="420px" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
+                </div>
+            </div>
+        )
     }
 
     render() {
