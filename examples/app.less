@@ -90,22 +90,26 @@
 }
 
 /*nav buttons*/
-.left {
+.icon {
+  background: none;
+  border: none;
   position: absolute;
-  left: 0;
+  outline: none;
   top: 50%;
   .translate(0, -50%);
   cursor: pointer;
-  padding: 50px 20px 50px 5px;
   z-index: 10;
+  max-width: 80px;
+  height: 120px;
+  width: 16%;
 }
 
-.right {
-  position: absolute;
+.icon--left {
+  left: 0;
+  padding: 50px 20px 50px 5px;
+}
+
+.icon--right {
   right: 0;
-  top: 50%;
-  .translate(0, -50%);
-  cursor: pointer;
   padding: 50px 5px 50px 20px;
-  z-index: 10;
 }
