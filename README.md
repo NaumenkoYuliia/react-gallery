@@ -9,15 +9,16 @@ Check it out
 
 ## Basic Usage
 
-Pass any html to the `Gallery` as an array.
+Pass items to `Gallery` as an array.
 
 ```jsx
+import React, {Component} from 'react'
+import Gallery from '../lib/Gallery'
+
 const images = [
-    { title: 'Basil', width: '800', height: '650' },
-    { title: 'Lettuce', width: '1000', height: '1000'},
-    { title: 'Tomatoes', width: '400', height: '650' },
-    { title: 'Corn', width: '1000', height: '1000'},
-    { title: 'Cheese', width: '1250', height: '860'}
+    { title: 'Image-1', width: '800', height: '650' },
+    { title: 'Image-2', width: '1000', height: '1000'},
+    { title: 'Image-3', width: '400', height: '650' }
 ]
 
 const items = images.map(( item, i ) => {
@@ -30,9 +31,37 @@ const items = images.map(( item, i ) => {
     )
 })
 
-<Gallery>
-  {items}
-</Gallery>
+// add content to items
+items.push(
+    <div key={'content'}>
+        <div className="centered">
+            <h1>Some Random Text</h1>
+            <p>Sociis risus nisi ridiculus urn?</p>
+        </div>
+    </div>
+)
+
+// add embeded video
+items.push(
+    <div key={'video'} className={'video-embed'}>
+        <div className="centered">
+            <iframe src="//player.vimeo.com/video/148626927" width="640px" height="420px" frameBorder="0"
+              webkitallowfullscreen mozallowfullscreen allowFullScreen></iframe>
+        </div>
+    </div>
+)
+
+class App extends Component {
+    render() {
+        return (
+            <div className="container">
+                <Gallery renderNav={true} loop={true}>
+                   {items}
+                </Gallery>
+            </div>
+        )
+    }
+}
 ```
 
 ## Props
