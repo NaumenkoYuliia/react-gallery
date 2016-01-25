@@ -1,3 +1,11 @@
+body {
+  margin: 0
+}
+
+h1, h3, a, p, span {
+  font-family: Helvetica, Arial;
+}
+
 .transition(@transition) {
   -webkit-transition: @transition;
           transition: @transition;
@@ -16,6 +24,7 @@
 }
 
 .item-list {
+  margin: 0;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -44,11 +53,14 @@
   max-width: 80%;
 }
 
-.active, .next, .prev {
-  display: block;
-  .transition(all .5s ease);
+.image-title {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
+  margin: 0;
 }
 
+/* animation */
 .active {
     .translate(0, 0);
 }
@@ -61,12 +73,10 @@
     .translate(-100%, 0);
 }
 
-.image-title {
-  position: absolute;
-  left: 100px;
-  bottom: 100px;
+.active, .next, .prev {
+  display: block;
+  .transition(all .5s ease);
 }
-
 .show {
   display: block;
 }
