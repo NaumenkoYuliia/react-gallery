@@ -15,6 +15,7 @@
     "test": "jest",
     "start": "scripts/dev-examples",
     "build": "scripts/build",
+    "build-example": "scripts/build-examples",
     "watch": "scripts/watch",
     "lint": "eslint lib examples"
   },
