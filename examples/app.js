@@ -45,7 +45,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <Gallery loop={true}>
+                <Gallery renderNav={true} loop={true}>
                    {this.items}
                 </Gallery>
             </div>
