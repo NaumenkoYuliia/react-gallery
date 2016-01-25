@@ -9,13 +9,30 @@ Check it out
 
 ## Basic Usage
 
+Pass any html to the `Gallery` as an array.
+
 ```jsx
 const images = [
-  { title: 'Foo', src: 'http://example.com/foo.jpg' },
-  { title: 'Bar', src: 'http://example.com/bar.jpg' }
+    { title: 'Basil', width: '800', height: '650' },
+    { title: 'Lettuce', width: '1000', height: '1000'},
+    { title: 'Tomatoes', width: '400', height: '650' },
+    { title: 'Corn', width: '1000', height: '1000'},
+    { title: 'Cheese', width: '1250', height: '860'}
 ]
 
-<Gallery images={this.images} />
+const items = images.map(( item, i ) => {
+    var src = "https://unsplash.it/" + item.width + "/" + item.height + "/?random";
+    return (
+        <div key={'image-'+i}>
+            <h3 className="image-title">{item.title}</h3>
+            <img className="centered" src={src} />
+        </div>
+    )
+})
+
+<Gallery>
+  {items}
+</Gallery>
 ```
 
 ## Props
@@ -23,7 +40,6 @@ const images = [
 |Property|Type|Default|Description|
 |--------|----|-------|-----------|
 | loop | bool | false | inifinte loop through gallery |
-| images | array | undefined | required list of images |
 | animate | string | null | optional animate style [ slideLR, slideUD, fade ] |
 
 
