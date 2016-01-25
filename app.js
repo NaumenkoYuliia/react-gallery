@@ -78,12 +78,12 @@
 
 	        var _this = _possibleConstructorReturn(this, Object.getPrototypeOf(App).call(this));
 
-	        var images = [{ title: 'Basil', width: '800', height: '650' }, { title: 'Lettuce', width: '1000', height: '1000' }, { title: 'Tomatoes', width: '400', height: '650' }, { title: 'Corn', width: '1000', height: '1000' }, { title: 'Cheese', width: '1250', height: '860' }];
+	        var images = [{ title: 'Image-1', width: '800', height: '650' }, { title: 'Image-2', width: '1000', height: '1000' }, { title: 'Image-3', width: '400', height: '650' }];
 	        _this.items = images.map(function (item, i) {
 	            var src = "https://unsplash.it/" + item.width + "/" + item.height + "/?random";
 	            return _react2.default.createElement(
 	                'div',
-	                { key: i },
+	                { key: 'image-' + i },
 	                _react2.default.createElement(
 	                    'h3',
 	                    { className: 'image-title' },
@@ -95,7 +95,7 @@
 
 	        _this.items.push(_react2.default.createElement(
 	            'div',
-	            { key: 'foo' },
+	            { key: 'content' },
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'centered' },
@@ -118,7 +118,7 @@
 	            _react2.default.createElement(
 	                'div',
 	                { className: 'centered' },
-	                _react2.default.createElement('iframe', { src: '//player.vimeo.com/video/148626927', width: '640px', height: '420px', frameborder: '0', webkitallowfullscreen: true, mozallowfullscreen: true, allowfullscreen: true })
+	                _react2.default.createElement('iframe', { src: '//player.vimeo.com/video/148626927', width: '640px', height: '420px', frameBorder: '0', webkitallowfullscreen: true, mozallowfullscreen: true, allowFullScreen: true })
 	            )
 	        ));
 	        return _this;
@@ -20148,7 +20148,7 @@
 
 
 	// module
-	exports.push([module.id, ".container {\n  height: 100vh;\n  width: 100vw;\n  position: relative;\n}\n.item-list {\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  list-style-type: none;\n  padding: 0;\n  overflow: hidden;\n}\n.item {\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n}\n.centered {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  max-height: 90%;\n  max-width: 80%;\n}\n.active,\n.next,\n.prev {\n  display: block;\n  -webkit-transition: all 0.5s ease;\n  transition: all 0.5s ease;\n}\n.active {\n  -webkit-transform: translate(0, 0);\n  -ms-transform: translate(0, 0);\n  transform: translate(0, 0);\n}\n.next {\n  -webkit-transform: translate(100%, 0);\n  -ms-transform: translate(100%, 0);\n  transform: translate(100%, 0);\n}\n.prev {\n  -webkit-transform: translate(-100%, 0);\n  -ms-transform: translate(-100%, 0);\n  transform: translate(-100%, 0);\n}\n.image-title {\n  position: absolute;\n  left: 100px;\n  bottom: 100px;\n}\n.show {\n  display: block;\n}\n.hide {\n  display: none;\n}\n.fade-in {\n  opacity: 1;\n  transition: opacity 0.75s ease-in-out;\n  -moz-transition: opacity 0.75s ease-in-out;\n  -webkit-transition: opacity 0.75s ease-in-out;\n}\n.fade-out {\n  opacity: 0;\n  transition: opacity 0.75s ease-in-out;\n  -moz-transition: opacity 0.75s ease-in-out;\n  -webkit-transition: opacity 0.75s ease-in-out;\n}\n/*nav buttons*/\n.icon {\n  background: none;\n  border: none;\n  position: absolute;\n  outline: none;\n  top: 50%;\n  -webkit-transform: translate(0, -50%);\n  -ms-transform: translate(0, -50%);\n  transform: translate(0, -50%);\n  cursor: pointer;\n  z-index: 10;\n  max-width: 80px;\n  height: 120px;\n  width: 16%;\n}\n.icon--left {\n  left: 0;\n  padding: 50px 20px 50px 5px;\n}\n.icon--right {\n  right: 0;\n  padding: 50px 5px 50px 20px;\n}\n", ""]);
+	exports.push([module.id, "body {\n  margin: 0;\n}\nh1,\nh3,\na,\np,\nspan {\n  font-family: Helvetica, Arial;\n}\n.container {\n  height: 100vh;\n  width: 100vw;\n  position: relative;\n}\n.item-list {\n  margin: 0;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n  list-style-type: none;\n  padding: 0;\n  overflow: hidden;\n}\n.item {\n  display: none;\n  position: absolute;\n  width: 100%;\n  height: 100%;\n  top: 0;\n  left: 0;\n}\n.centered {\n  position: absolute;\n  left: 50%;\n  top: 50%;\n  -webkit-transform: translate(-50%, -50%);\n  -ms-transform: translate(-50%, -50%);\n  transform: translate(-50%, -50%);\n  max-height: 90%;\n  max-width: 80%;\n}\n.image-title {\n  position: absolute;\n  left: 10px;\n  bottom: 10px;\n  margin: 0;\n}\n/* animation */\n.active {\n  -webkit-transform: translate(0, 0);\n  -ms-transform: translate(0, 0);\n  transform: translate(0, 0);\n}\n.next {\n  -webkit-transform: translate(100%, 0);\n  -ms-transform: translate(100%, 0);\n  transform: translate(100%, 0);\n}\n.prev {\n  -webkit-transform: translate(-100%, 0);\n  -ms-transform: translate(-100%, 0);\n  transform: translate(-100%, 0);\n}\n.active,\n.next,\n.prev {\n  display: block;\n  -webkit-transition: all 0.5s ease;\n  transition: all 0.5s ease;\n}\n.show {\n  display: block;\n}\n.hide {\n  display: none;\n}\n.fade-in {\n  opacity: 1;\n  transition: opacity 0.75s ease-in-out;\n  -moz-transition: opacity 0.75s ease-in-out;\n  -webkit-transition: opacity 0.75s ease-in-out;\n}\n.fade-out {\n  opacity: 0;\n  transition: opacity 0.75s ease-in-out;\n  -moz-transition: opacity 0.75s ease-in-out;\n  -webkit-transition: opacity 0.75s ease-in-out;\n}\n/*nav buttons*/\n.icon {\n  background: none;\n  border: none;\n  position: absolute;\n  outline: none;\n  top: 50%;\n  -webkit-transform: translate(0, -50%);\n  -ms-transform: translate(0, -50%);\n  transform: translate(0, -50%);\n  cursor: pointer;\n  z-index: 10;\n  max-width: 80px;\n  height: 120px;\n  width: 16%;\n}\n.icon--left {\n  left: 0;\n  padding: 50px 20px 50px 5px;\n}\n.icon--right {\n  right: 0;\n  padding: 50px 5px 50px 20px;\n}\n", ""]);
 
 	// exports
 
