@@ -133,7 +133,7 @@ describe("Gallery", () => {
 
         it("should move to the next item", () => {
             TestUtils.Simulate.click(
-                TestUtils.findRenderedDOMComponentWithClass(gallery, 'right')
+                TestUtils.findRenderedDOMComponentWithClass(gallery, 'icon--right')
             );
             expect(gallery.state.currentImg).toBe(1);
         });
@@ -141,7 +141,7 @@ describe("Gallery", () => {
         it("when last item should not change state", () => {
             gallery.state.currentImg = 2
             TestUtils.Simulate.click(
-                TestUtils.findRenderedDOMComponentWithClass(gallery, 'right')
+                TestUtils.findRenderedDOMComponentWithClass(gallery, 'icon--right')
             );
             expect(gallery.state.currentImg).toBe(2);
         });
@@ -150,7 +150,7 @@ describe("Gallery", () => {
             it("on last item should loop to first", () => {
                 galleryWithLoop.state.currentImg = 2
                 TestUtils.Simulate.click(
-                    TestUtils.findRenderedDOMComponentWithClass(galleryWithLoop, 'right')
+                    TestUtils.findRenderedDOMComponentWithClass(galleryWithLoop, 'icon--right')
                 );
                 expect(galleryWithLoop.state.currentImg).toBe(0);
             });
@@ -162,14 +162,14 @@ describe("Gallery", () => {
         it("should move to the prev item", () => {
             gallery.state.currentImg = 1
             TestUtils.Simulate.click(
-                TestUtils.findRenderedDOMComponentWithClass(gallery, 'left')
+                TestUtils.findRenderedDOMComponentWithClass(gallery, 'icon--left')
             );
             expect(gallery.state.currentImg).toBe(0);
         });
 
         it("when first item should not change state", () => {
             TestUtils.Simulate.click(
-                TestUtils.findRenderedDOMComponentWithClass(gallery, 'left')
+                TestUtils.findRenderedDOMComponentWithClass(gallery, 'icon--left')
             );
             expect(gallery.state.currentImg).toBe(0);
         });
@@ -177,7 +177,7 @@ describe("Gallery", () => {
         describe("when loop is true", () => {
             it("on first item should loop to last", () => {
                 TestUtils.Simulate.click(
-                    TestUtils.findRenderedDOMComponentWithClass(galleryWithLoop, 'left')
+                    TestUtils.findRenderedDOMComponentWithClass(galleryWithLoop, 'icon--left')
                 );
                 expect(galleryWithLoop.state.currentImg).toBe(2);
             });
