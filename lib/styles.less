@@ -40,7 +40,11 @@
   display: none;
 }
 
-.gallery__item--active, .gallery__item--next, .gallery__item--prev {
+.gallery__item--active,
+.gallery__item--next,
+.gallery__item--prev,
+.gallery__item--next-up,
+.gallery__item--prev-down {
   display: block;
   .transition(all .5s ease);
 }
@@ -55,6 +59,14 @@
 
 .gallery__item--prev {
   .translate(-100%, 0);
+}
+
+.gallery__item--next-up {
+  .translate(0, 100%);
+}
+
+.gallery__item--prev-down {
+  .translate(0, -100%);
 }
 
 .gallery__item--fade-in {
