@@ -45,10 +45,19 @@ class App extends Component {
     }
     render() {
         return (
-            <div className="container">
-                <Gallery renderNav={true} loop={true}>
-                   {items}
-                </Gallery>
+            <div className="site">
+                <div className="container">
+                    <h1>Slide</h1>
+                    <Gallery renderNav={true} loop={true} animate='slideLR'>
+                       {items}
+                    </Gallery>
+                </div>
+                <div className="container">
+                    <h1>Fade</h1>
+                    <Gallery renderNav={true} loop={true} animate='fade'>
+                       {items}
+                    </Gallery>
+                </div>
             </div>
         )
     }
