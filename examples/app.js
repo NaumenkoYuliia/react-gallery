@@ -47,8 +47,14 @@ class App extends Component {
         return (
             <div className="site">
                 <div className="container">
-                    <h1>Slide</h1>
+                    <h1>Slide Left/Right</h1>
                     <Gallery renderNav={true} loop={true} animate='slideLR'>
+                       {items}
+                    </Gallery>
+                </div>
+                <div className="container">
+                    <h1>Slide Up/Down</h1>
+                    <Gallery renderNav={true} loop={true} animate='slideUD'>
                        {items}
                     </Gallery>
                 </div>
