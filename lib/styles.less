@@ -88,10 +88,14 @@
   border: none;
   position: absolute;
   outline: none;
-  top: 50%;
-  .translate(0, -50%);
   cursor: pointer;
   z-index: 10;
+}
+
+.gallery__navIcon--prev,
+.gallery__navIcon--next {
+  top: 50%;
+  .translate(0, -50%);
   max-width: 80px;
   height: 120px;
   width: 16%;
@@ -105,4 +109,23 @@
 .gallery__navIcon--next {
   right: 0;
   padding: 50px 5px 50px 20px;
+}
+
+.gallery__navIcon--prev-up,
+.gallery__navIcon--next-down {
+  left: 50%;
+  .translate(-50%, 0);
+  max-height: 80px;
+  width: 120px;
+  height: 16%;
+}
+
+.gallery__navIcon--prev-up {
+  top: 0;
+  padding: 20px 50px 5px 50px;
+}
+
+.gallery__navIcon--next-down {
+  bottom: 0;
+  padding: 5px 50px 20px 50px;
 }
