@@ -2,8 +2,6 @@
 
 Elegant gallery with swipe.
 
-WORK IN PROGRESS many changes will be made to core function.
-
 Check it out
 [ferndopolis.github.io/react-gallery](http://ferndopolis.github.io/react-gallery/)
 
@@ -55,7 +53,7 @@ class App extends Component {
     render() {
         return (
             <div className="container">
-                <Gallery renderNav={true} loop={true}>
+                <Gallery renderNav={true} loop={true} animate='slideLR'>
                    {items}
                 </Gallery>
             </div>
@@ -69,14 +67,14 @@ class App extends Component {
 |Property|Type|Default|Description|
 |--------|----|-------|-----------|
 | loop | bool | false | inifinte loop through gallery |
-| animate | string | null | optional animate style [ slideLR, slideUD, fade ] |
+| animate | string | null | optional animate style [ 'slideLR', 'slideUD', 'fade' ] |
 
 
 ## Local Development
 
 ` npm install `
-` npm test `
-` npm start `
-` npm watch `
+` npm test ` run test.
+` npm start ` start development server.
+` npm run watch ` watch and build bundle.
 
 Point browser to [`localhost:8080`](http://localhost:8080)
